@@ -1,0 +1,25 @@
+<p>componente-producto-lista works!</p>
+<button class="btn btn-secondary">Mostrar Datos</button>
+<table>
+    <thead>
+        <tr>
+            <td>Codigo</td>
+            <td>Nombre Producto</td>
+            <td>Existencia</td>
+            <td>Marca</td>
+            <td>Precio</td>
+        </tr>
+    
+    </thead>
+    
+    <tbody *ngFor="let item of this.lstProducto">
+        <tr>
+            <th>{{item.id_producto}}</th>
+            <th>{{item.nombre_producto}}</th>
+            <th>{{item.existencia}}</th>
+            <th>{{item.marca}}</th>
+            <th>{{item.precio}}</th>
+        </tr>
+    </tbody>
+     
+</table>

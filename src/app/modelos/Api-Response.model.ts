@@ -3,4 +3,5 @@ export class IServiceResponses{
     codigooperacion: number =0;
     mensajeError: String = '';
     totalregistros: number = 0;
+    message! : string;
 }

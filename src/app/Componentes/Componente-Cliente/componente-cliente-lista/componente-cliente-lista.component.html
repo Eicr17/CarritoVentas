@@ -1,0 +1,25 @@
+<p>componente-cliente-lista works!</p>
+<button class="btn btn-outline-secondary">Mostrar Datos</button>
+<table>
+    <thead>
+      <tr>
+        <th>Id Cliente</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Dpi</th>
+        <th>Telefono</th>
+        <th>Total Ventas</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of this.lstCliente">
+          <tr>
+            <td>{{item.id_cliente}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido}}</td>
+            <td>{{item.dpi}}</td>
+            <td>{{item.telefono}}</td>
+            <td>{{item.totalventas}}</td>
+          </tr>
+
+    </tbody>
+</table>
