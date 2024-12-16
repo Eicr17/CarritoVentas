@@ -1,0 +1,50 @@
+<p>componente-producto-creacion works!</p>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Crear Producto
+     </button>
+   
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Producto</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+               <div class="row">
+               
+                   <div class="input-group mb-3">
+                       <span class="input-group-text" id="basic-addon1">Nombre</span>
+                       <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" [(ngModel)]="nombre_producto">
+                     </div>
+               </div>
+               
+               <div class="row">
+                   <div class="input-group mb-3">
+                       <span class="input-group-text" id="basic-addon1">Existencia</span>
+                       <input type="text" class="form-control" placeholder="Existencia " aria-label="Existencia" aria-describedby="basic-addon1" [(ngModel)]="existencia">
+                     </div>
+                </div>
+   
+                <div class="row">
+                   <div class="input-group mb-3">
+                       <span class="input-group-text" id="basic-addon1">Marca</span>
+                       <input type="text" class="form-control" placeholder="Marca" aria-label="Marca" aria-describedby="basic-addon1" [(ngModel)]="marca">
+                     </div>
+                </div>
+   
+   
+                <div class="row">
+                   <div class="input-group mb-3">
+                       <span class="input-group-text" id="basic-addon1">Precio</span>
+                       <input type="text" class="form-control" placeholder="Precio" aria-label="Precio" aria-describedby="basic-addon1" [(ngModel)]="precio">
+                     </div>
+                </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary " (click)="CrearProducto()">Crear Producto</button>
+           </div>
+         </div>
+       </div>
+     </div>
