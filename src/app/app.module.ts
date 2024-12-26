@@ -12,7 +12,7 @@ import { ComponenteProductoEliminacionComponent } from './Componentes/Componente
 import { ComponenteProductoListaComponent } from './Componentes/Componente-Producto/componente-producto-lista/componente-producto-lista.component';
 import { ComponenteProductoCreacionComponent } from './Componentes/Componente-Producto/componente-producto-creacion/componente-producto-creacion.component';
 import { ComponenteVentaListaComponent } from './Componentes/Componente-Venta/componente-venta-lista/componente-venta-lista.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule  
+
   ],
   providers: [],
   bootstrap: [AppComponent]

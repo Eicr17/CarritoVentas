@@ -11,9 +11,22 @@
              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
            </div>
            <div class="modal-body">
-               <div class="row">
-               
-                   <div class="input-group mb-3">
+
+            <div class="row">
+              <div class="col-lg-6 form-group mb-3 ">
+                <form [formGroup]="form">
+                  <span class="input-group">Cliente</span>
+                  <select formControlName="cliente" class="form-select">
+                    <option *ngFor="let cli of lstCliente" [ngValue]="cli">
+                      {{cli.nombre}}
+                    </option>
+                  </select>
+                </form>
+              </div>
+              
+          </div>
+               <div class="row">  
+                   <div class="input-group mb-4">
                        <span class="input-group-text" id="basic-addon1">Establecimiento</span>
                        <input type="text" class="form-control" placeholder="Establecimiento" aria-label="Establecimiento" aria-describedby="basic-addon1" [(ngModel)]="establecimiento">
                      </div>
@@ -32,15 +45,7 @@
                        <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad_Producto" aria-describedby="basic-addon1" [(ngModel)]="cantidad_producto">
                      </div>
                 </div>
-   
-   
-                <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Fecha</span>
-                       <input type="text" class="form-control" placeholder="Fecha" aria-label="Fecha" aria-describedby="basic-addon1" [(ngModel)]="fecha_venta">
-                     </div>
-                </div>
-
+  
                 <div class="row">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Descuento</span>
