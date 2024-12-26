@@ -24,7 +24,7 @@ export class SrvClienteService {
 
    }
 
-     GrabarCliente( clientes:MdlClienteCreacion){
+     CrearCliente( clientes:MdlClienteCreacion){
        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Cliente`, clientes)
      }
    

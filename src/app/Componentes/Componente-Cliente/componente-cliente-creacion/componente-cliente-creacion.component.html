@@ -1,58 +1,16 @@
 <p>componente-producto-creacion works!</p>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Crear Cliente
-     </button>
-   
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Cliente</h1>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           </div>
-           <div class="modal-body">
-               <div class="row">
-               
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Nombre</span>
-                       <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" [(ngModel)]="nombre">
-                     </div>
-               </div>
-               
-               <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Apellido</span>
-                       <input type="text" class="form-control" placeholder="Apellido " aria-label="Apellido" aria-describedby="basic-addon1" [(ngModel)]="apellido">
-                     </div>
-                </div>
-   
-                <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Dpi</span>
-                       <input type="text" class="form-control" placeholder="Dpi" aria-label="Dpi" aria-describedby="basic-addon1" [(ngModel)]="dpi">
-                     </div>
-                </div>
-   
-   
-                <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Telefono</span>
-                       <input type="text" class="form-control" placeholder="Telefono" aria-label="Telefono" aria-describedby="basic-addon1" [(ngModel)]="telefono">
-                     </div>
-                </div>
-   
-                <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Total Ventas</span>
-                       <input type="text" class="form-control" placeholder="TotalVentas" aria-label="TotalVentas" aria-describedby="basic-addon1" [(ngModel)]="totalventas">
-                     </div>
-                </div>
-   
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary " (click)="CrearEstudiante()">Crear Cliente</button>
-           </div>
-         </div>
-       </div>
-     </div>
+<form [formGroup]="formClientes" (submit)="GrabarCliente()">
+  <label for="Nm">Ingresar nombre</label>
+  <input id="Nm" name="txtNombre" type="text" formControlName="nombres">
+  <br><br>
+  <label for="Ap">Ingresar apellido</label>
+  <input id="Ap" name="txtApellido" type="text" formControlName="apellidos">
+  <br><br>
+  <label for="Dp">Ingresar dpi</label>
+  <input id="Dp" name="txtDpi" type="text" formControlName="dpi">
+  <br><br>
+  <label for="Tl">Ingresar telefono</label>
+  <input id="Tl" name="txtTelefono" type="text" formControlName="telefono">
+  <br><br>
+  <button>Enviar Cliente</button>
+</form>

@@ -1,69 +1,19 @@
 <p>componente-venta-creacion works!</p>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Crear Venta
-     </button>
-   
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Venta</h1>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           </div>
-           <div class="modal-body">
-
-            <div class="row">
-              <div class="col-lg-6 form-group mb-3 ">
-                <form [formGroup]="form">
-                  <span class="input-group">Cliente</span>
-                  <select formControlName="cliente" class="form-select">
-                    <option *ngFor="let cli of lstCliente" [ngValue]="cli">
-                      {{cli.nombre}}
-                    </option>
-                  </select>
-                </form>
-              </div>
-              
-          </div>
-               <div class="row">  
-                   <div class="input-group mb-4">
-                       <span class="input-group-text" id="basic-addon1">Establecimiento</span>
-                       <input type="text" class="form-control" placeholder="Establecimiento" aria-label="Establecimiento" aria-describedby="basic-addon1" [(ngModel)]="establecimiento">
-                     </div>
-               </div>
-               
-               <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Precio</span>
-                       <input type="text" class="form-control" placeholder="Precio " aria-label="Precio" aria-describedby="basic-addon1" [(ngModel)]="precio">
-                     </div>
-                </div>
-   
-                <div class="row">
-                   <div class="input-group mb-3">
-                       <span class="input-group-text" id="basic-addon1">Cantidad </span>
-                       <input type="text" class="form-control" placeholder="Cantidad" aria-label="Cantidad_Producto" aria-describedby="basic-addon1" [(ngModel)]="cantidad_producto">
-                     </div>
-                </div>
-  
-                <div class="row">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Descuento</span>
-                        <input type="text" class="form-control" placeholder="Descuento" aria-label="Descuento" aria-describedby="basic-addon1" [(ngModel)]="descuento">
-                      </div>
-                 </div>
-
-                 <div class="row">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Existencias</span>
-                        <input type="text" class="form-control" placeholder="Existencias" aria-label="Existencias" aria-describedby="basic-addon1" [(ngModel)]="existencias">
-                      </div>
-                 </div>
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary " (click)="CrearVentas()">Crear Venta</button>
-           </div>
-         </div>
-       </div>
-     </div>
+<form [formGroup]="formVenta" (submit)="GrabarVentas()">
+<label for="es">Ingresar establecimiento</label>
+<input id="es" name="txtEstablecimiento" type="text" formControlName="establecimiento">
+<br><br>
+<label for="pre">Ingresar precio</label>
+<input id="pre" name="txtPrecio" type="text" formControlName="precio">
+<br><br>
+<label for="can">Ingresar cantidad</label>
+<input id="can" name="txtEstablecimiento" type="text" formControlName="cantidad">
+<br><br>
+<label for="des">Ingresar descuento</label>
+<input id="des" name="txtDescuento" type="text" formControlName="descuento">
+<br><br>
+<label for="exi">Ingresar existencia</label>
+<input id="exi" name="txtExistencia" type="text" formControlName="existencia">
+<br><br>
+<button>Enviar venta</button>
+</form>

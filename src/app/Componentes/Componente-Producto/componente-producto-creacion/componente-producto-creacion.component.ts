@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdlProductoCrear } from 'src/app/modelos/mdl-producto-creacion.model';
 import { SrvProductosService } from 'src/app/Servicios/srv-productos.service';
 
@@ -9,32 +10,32 @@ import { SrvProductosService } from 'src/app/Servicios/srv-productos.service';
 })
 export class ComponenteProductoCreacionComponent {
 lstProducto!  : MdlProductoCrear[];
-nombre_producto!: string;
-existencia! : number;
-marca! : string;
-precio! : number;
+public formProductos! : FormGroup
 
-constructor(
-
-  private  srvProductoCreacion : SrvProductosService
-){
+constructor( private  srvProductoCreacion : SrvProductosService, private formbuilder : FormBuilder)
+{
 
 }
 
-CrearProducto(){
-this.srvProductoCreacion.CrearProducto({
-nombre_producto: this.nombre_producto,
-existencia: this.existencia,
-marca: this.marca,
-precio: this.precio
+ngOnInit(){
+  this.formProductos = this.formbuilder.group({
+    nombre_producto : ['', Validators.required],
+    marca : ['', Validators.required],
+    precio : ['', Validators.required],
+    existencia : ['', Validators.required]
+  })
 }
+
+GrabarProducto(){
+this.srvProductoCreacion.CrearProducto(
+  this.formProductos.value
 ).subscribe(
-  (resp) => {
-    let respuesta  : string = "";
-    respuesta = resp.message;
+  (response) => {
+    if(response.codigooperacion ==0)
+      alert("Producto creado exitosamente")
   },
-  (fail:any)=>{
-    alert(fail)
+  (fail : any) => {
+    console.log(fail)
   }
 )
 }

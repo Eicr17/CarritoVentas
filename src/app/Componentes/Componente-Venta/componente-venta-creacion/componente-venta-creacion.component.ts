@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MdlCliente } from 'src/app/modelos/mdl-cliente.model';
 import { MdlVentasCreacion } from 'src/app/modelos/mdl-ventas-creacion.model';
 import { SrvVentasService } from 'src/app/Servicios/srv-ventas.service';
@@ -11,40 +11,34 @@ import { SrvVentasService } from 'src/app/Servicios/srv-ventas.service';
 })
 export class ComponenteVentaCreacionComponent {
 lstVenta! : MdlVentasCreacion[];
-lstCliente: MdlCliente[] = [];
+public formVenta! : FormGroup
 
-establecimiento! : string;
-precio! : number;
-cantidad_producto!: number;
-descuento! : number;
-existencias! : number;
-
-constructor(
-
-  private srvVentasLista : SrvVentasService,
-  private FormBuilder: FormBuilder
-){
-
-
+constructor( private srvVentasLista : SrvVentasService, private FormBuilder: FormBuilder){
 }
 
-CrearVentas(){
-this.srvVentasLista.CrearVentas({
-establecimiento: this.establecimiento,
-precio: this.precio,
-cantidad_producto:  this.cantidad_producto,
-descuento : this.descuento,
-existencias: this.existencias
-  }
-).subscribe(
-  (resp) =>{
-    let respuesta  : string ="";
-    respuesta = resp.message;
-  },
-  (fail: any)=>{
-    alert(fail)
-  }
-)
+ngOnInit(){
+  this.formVenta = this.FormBuilder.group({
+    establecimiento : ['', Validators.required],
+    precio : ['', Validators.required],
+    cantidad : ['',Validators.required],
+    descuento : ['', Validators.required],
+    existencia : ['', Validators.required]
+  })
+}
+
+GrabarVentas(){
+  this.srvVentasLista.CrearVentas(
+    this.formVenta.value
+  ).subscribe(
+    (response) => {
+      if (response.codigooperacion == 0)
+        alert("Venta creada exitosamente")
+    },
+    (fail : any) =>{
+      console.log(fail)
+    }
+  )
+
 }
 
 
