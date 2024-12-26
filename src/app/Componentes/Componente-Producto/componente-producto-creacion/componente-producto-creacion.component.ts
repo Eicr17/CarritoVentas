@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MdlProductoCrear } from 'src/app/modelos/mdl-producto-creacion.model';
-import { SrvClienteService } from 'src/app/Servicios/srv-cliente.service';
-import { SrvProductoCreacionService } from 'src/app/Servicios/srv-producto-creacion.service';
+import { SrvProductosService } from 'src/app/Servicios/srv-productos.service';
 
 @Component({
   selector: 'app-componente-producto-creacion',
@@ -17,13 +16,13 @@ precio! : number;
 
 constructor(
 
-  private  srvProductoCreacion : SrvProductoCreacionService
+  private  srvProductoCreacion : SrvProductosService
 ){
 
 }
 
 CrearProducto(){
-this.srvProductoCreacion.postProducto({
+this.srvProductoCreacion.CrearProducto({
 nombre_producto: this.nombre_producto,
 existencia: this.existencia,
 marca: this.marca,

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { MdlClienteCreacion } from 'src/app/modelos/mdl-cliente-creacion.model';
+import { Form, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MdlCliente } from 'src/app/modelos/mdl-cliente.model';
 import { MdlVentasCreacion } from 'src/app/modelos/mdl-ventas-creacion.model';
-import { MdlVentas } from 'src/app/modelos/mdl-ventas.model';
-import { SrvVentasCreacionService } from 'src/app/Servicios/srv-ventas-creacion.service';
+import { SrvVentasService } from 'src/app/Servicios/srv-ventas.service';
 
 @Component({
   selector: 'app-componente-venta-creacion',
@@ -11,27 +11,28 @@ import { SrvVentasCreacionService } from 'src/app/Servicios/srv-ventas-creacion.
 })
 export class ComponenteVentaCreacionComponent {
 lstVenta! : MdlVentasCreacion[];
+lstCliente: MdlCliente[] = [];
+
 establecimiento! : string;
 precio! : number;
 cantidad_producto!: number;
-fecha_venta! : Date;
 descuento! : number;
 existencias! : number;
 
 constructor(
 
-  private srvVentasCreacion : SrvVentasCreacionService
+  private srvVentasLista : SrvVentasService,
+  private FormBuilder: FormBuilder
 ){
 
 
 }
 
 CrearVentas(){
-this.srvVentasCreacion.postVenta({
+this.srvVentasLista.CrearVentas({
 establecimiento: this.establecimiento,
 precio: this.precio,
 cantidad_producto:  this.cantidad_producto,
-fecha_venta: this.fecha_venta,
 descuento : this.descuento,
 existencias: this.existencias
   }
@@ -45,5 +46,7 @@ existencias: this.existencias
   }
 )
 }
+
+
 
 }

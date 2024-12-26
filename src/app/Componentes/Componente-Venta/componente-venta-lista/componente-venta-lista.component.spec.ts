@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ComponenteVentaLitaComponent } from './componente-venta-lista.component';
+import { ComponenteVentaListaComponent } from './componente-venta-lista.component';
 
 describe('ComponenteVentaListaComponent', () => {
-  let component: ComponenteVentaLitaComponent;
-  let fixture: ComponentFixture<ComponenteVentaLitaComponent>;
+  let component: ComponenteVentaListaComponent;
+  let fixture: ComponentFixture<ComponenteVentaListaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ComponenteVentaLitaComponent]
+      declarations: [ComponenteVentaListaComponent]
     });
-    fixture = TestBed.createComponent(ComponenteVentaLitaComponent);
+    fixture = TestBed.createComponent(ComponenteVentaListaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
