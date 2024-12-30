@@ -20,12 +20,12 @@ export class SrvClienteService {
 
    obtenerClientes(){
 
-    return this.httpClient.get<IServiceResponses> (`${environment.api_carrito}/Cliente`)
+    return this.httpClient.get<IServiceResponses> (`${environment.api_carrito}/Cliente/Obtener`)
 
    }
 
      CrearCliente( clientes:MdlClienteCreacion){
-       return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Cliente`, clientes)
+       return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Cliente/Crear`, clientes)
      }
    
 }
