@@ -16,12 +16,12 @@ export class SrvVentasService {
 
    ObtenerVentas(){
 
-    return this.httpClient.get<IServiceResponses>(`${environment.api_carrito}/Ventas`);
+    return this.httpClient.get<IServiceResponses>(`${environment.api_carrito}/Ventas/Obtener`);
 
    }
 
   CrearVentas( ventas_creacion:MdlVentasCreacion){
-        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Ventas`, ventas_creacion)
+        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Ventas/Insertar`, ventas_creacion)
       }
 
 }

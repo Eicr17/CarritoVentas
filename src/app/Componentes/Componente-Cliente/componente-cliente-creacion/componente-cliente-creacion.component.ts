@@ -10,19 +10,19 @@ import { SrvClienteService } from 'src/app/Servicios/srv-cliente.service';
   styleUrls: ['./componente-cliente-creacion.component.css']
 })
 export class ComponenteClienteCreacionComponent {
-lstClientes : MdlCliente[] = [];
-public formClientes! : FormGroup
+lstClientes! : MdlClienteCreacion[];
+public formClientes! : FormGroup;
 
 constructor(private srvClientes: SrvClienteService,
   private formBuilider : FormBuilder){
 
   }
-  NgOnInit(){
+  ngOnInit(){
     this.formClientes = this.formBuilider.group({
-      nombres : ['', Validators.required],
-      apellidos : ['', Validators.required],
+      nombre : ['', Validators.required],
+      apellido : ['', Validators.required],
       dpi : ['', Validators.required],
-      telefono : ['', Validators.required],
+      telefono : ['', Validators.required]
     })
   }
   GrabarCliente(){
@@ -32,6 +32,7 @@ constructor(private srvClientes: SrvClienteService,
       (response) => {
         if (response.codigooperacion == 0)
           alert("Cliente creado exitosamente")
+        else ("Error:" + response.mensajeError);
       },
       (fail : any) =>{
         console.log(fail);

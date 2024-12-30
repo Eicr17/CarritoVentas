@@ -15,11 +15,11 @@ export class SrvProductosService {
   }
 
   obtenerProductos (){
-      return this.httpClient.get<IServiceResponses>(`${environment.api_carrito}/Producto`);
+      return this.httpClient.get<IServiceResponses>(`${environment.api_carrito}/Producto/Obtener`);
   }
 
   CrearProducto( producto_creacion:MdlProductoCrear){
-        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Producto`, producto_creacion)
+        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Producto/Crear`, producto_creacion)
       }
   }
 
