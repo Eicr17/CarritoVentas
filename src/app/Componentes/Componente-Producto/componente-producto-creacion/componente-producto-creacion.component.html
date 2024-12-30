@@ -1,16 +1,37 @@
 <p>componente-producto-creacion works!</p>
 <form [formGroup]="formProductos" (submit)="GrabarProducto()">
-<label for="np">Ingresar nombre del producto</label>
-<input id="np" name="txtNombreProducto" type="text" formControlName="nombre_producto">
-<br><br>
-<label for="mc">Ingresar marca</label>
-<input id="mc" name="txtMarca" type="text" formControlName="marca">
-<br><br>
-<label for="pr">Ingresar precio</label>
-<input id="pr" name="txtPrecio" type="text" formControlName="precio">
-<br><br>
-<label for="ex">Ingresar existencia</label>
-<input id="ex" name="txtExistencia" type="text" formControlName="existencia">
-<br><br>
-<button>Enviar Producto</button>
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center">Creacion de Productos</h1>
+            <div class="col-12">
+                <label for="np">Ingresar nombre del producto</label>
+                <input class="input-group" id="np" name="txtNombreProducto" type="text"
+                    formControlName="nombre_producto">
+            </div>
+
+            <div class="col-12">
+                <label for="mc">Ingresar marca</label>
+                <input class="input-group" id="mc" name="txtMarca" type="text" formControlName="marca">
+            </div>
+
+            <div class="col-12">
+                <label for="pr">Ingresar precio</label>
+                <input class="input-group" id="pr" name="txtPrecio" type="text" formControlName="precio">
+            </div>
+
+            <div class="col-12 mt-3">
+                <label for="ex">Ingresar existencia</label>
+                <input class="input-group" id="ex" name="txtExistencia" type="text" formControlName="existencia">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 mt-3">
+                <button class="btn btn-primary">Enviar Producto</button>
+            </div>
+        </div>
+
+
+    </div>
 </form>

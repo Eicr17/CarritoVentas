@@ -1,16 +1,39 @@
 <p>componente-cliente-creacion works!</p>
 <form [formGroup]="formClientes" (submit)="GrabarCliente()">
-  <label for="Nm">Ingresar nombre</label>
-  <input id="Nm" name="txtNombre" type="text" formControlName="nombre">
-  <br><br>
-  <label for="Ap">Ingresar apellido</label>
-  <input id="Ap" name="txtApellido" type="text" formControlName="apellido">
-  <br><br>
-  <label for="Dp">Ingresar dpi</label>
-  <input id="Dp" name="txtDpi" type="text" formControlName="dpi">
-  <br><br>
-  <label for="Tl">Ingresar telefono</label>
-  <input id="Tl" name="txtTelefono" type="text" formControlName="telefono">
-  <br><br>
-  <button>Enviar Cliente</button>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Creacion De Clientes</h1>
+      <div class="col-12">
+        <label for="Nm">Ingresar nombre</label>
+        <input class="input-group" id="Nm" name="txtNombre" type="text" formControlName="nombre">
+      </div>
+
+      <div class="col-12">
+        <label for="Ap">Ingresar apellido</label>
+        <input class="input-group" id="Ap" name="txtApellido" type="text" formControlName="apellido">
+      </div>
+
+      <div class="col-12">
+        <label for="Dp">Ingresar dpi</label>
+        <input class="input-group" id="Dp" name="txtDpi" type="text" formControlName="dpi">
+      </div>
+
+      <div class="row ">
+        <div class="col-12 mt-3">
+          <label for="Tl">Ingresar telefono</label>
+          <input class="input-group" id="Tl" name="txtTelefono" type="text" formControlName="telefono">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 mt-3">
+          <button class="btn btn-primary">Enviar Cliente</button>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
 </form>
