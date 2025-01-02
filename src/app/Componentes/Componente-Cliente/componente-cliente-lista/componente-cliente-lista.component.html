@@ -4,10 +4,10 @@
 <div class="container">
   <h1 class="text-center">Lista de Clientes Disponibles</h1>
   <div class="col-12 mt-3">
-    <table class="table">
-      <thead>
+    <table class="table table-bordered border-dark table-hover">
+      <thead class="table-dark  ">
         <tr>
-          <th>Id Cliente</th>
+          <th>Cliente</th>
           <th>Nombre</th>
           <th>Apellido</th>
           <th>Dpi</th>
@@ -15,7 +15,7 @@
           <th>Total Ventas</th>
         </tr>
       </thead>
-      <tbody *ngFor="let item of this.lstCliente">
+      <tbody *ngFor="let item of this.lstCliente" >
         <tr>
           <td>{{item.id_cliente}}</td>
           <td>{{item.nombre}}</td>
@@ -24,7 +24,6 @@
           <td>{{item.telefono}}</td>
           <td>{{item.totalventas}}</td>
         </tr>
-
       </tbody>
     </table>
   </div>
