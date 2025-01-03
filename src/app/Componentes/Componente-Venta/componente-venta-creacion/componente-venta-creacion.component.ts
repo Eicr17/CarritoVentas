@@ -18,9 +18,11 @@ constructor( private srvVentasLista : SrvVentasService, private FormBuilder: For
 
 ngOnInit(){
   this.formVenta = this.FormBuilder.group({
+    id_producto : ['', Validators.required],
+    id_cliente : ['', Validators.required],
     establecimiento : ['', Validators.required],
     precio : ['', Validators.required],
-    cantidad : ['',Validators.required],
+    cantidad_producto : ['',Validators.required],
     descuento : ['', Validators.required],
     existencia : ['', Validators.required]
   })
