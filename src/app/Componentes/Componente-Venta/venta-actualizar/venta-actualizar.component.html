@@ -1,16 +1,10 @@
-<form [formGroup]="formVenta" (submit)="GrabarVentas()">
+<form [formGroup]="formVentaAc" (submit)="ActualizacionVenta()">
     <div class="container">
-        <h1 class="text-center">Creacion De Ventas</h1>
+        <h1 class="text-center">Actualizacion De Ventas</h1>
         <div class="row">
             <div class="col-12">
-                <label for="ip">Ingresar Id del producto</label>
-                    <input type="text" class="form-control" placeholder="Id producto" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_producto">
-
-            </div>
-            <div class="col-12">
-                <label for="ic">Ingresar Id del cliente</label>
-                    <input type="text" class="form-control" placeholder="Id cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_cliente">
-
+                <label for="i">Ingresar Id de venta</label>
+                    <input type="text" class="form-control" placeholder="Id venta" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_venta">
             </div>
             <div class="col-12">
                 <label for="es">Ingresar establecimiento</label>
@@ -25,7 +19,7 @@
 
             <div class="col-12">
                 <label for="can">Ingresar cantidad</label>
-                <input type="text" class="form-control" placeholder="Cantidad" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="cantidad_producto">
+                <input type="text" class="form-control" placeholder="Cantidad" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="cantidad">
 
             </div>
 
@@ -36,7 +30,7 @@
             </div>
         
             <div class="col-12 mt-3">
-                <button class="btn btn-primary">Crear Nueva venta</button>
+                <button class="btn btn-primary">Actualizar venta</button>
             </div>
         </div>
     </div>

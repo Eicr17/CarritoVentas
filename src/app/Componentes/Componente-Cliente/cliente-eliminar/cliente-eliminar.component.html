@@ -1,0 +1,15 @@
+<form [formGroup]="formClienteEliminar" (submit)="EliminacionCliente()">
+  <div class="container">
+      <h1 class="text-center">Eliminacion De Clientes</h1>
+      <div class="row">
+          <div class="col-12">
+              <label for="ic">Ingresar Id cliente</label>
+                  <input type="text" class="form-control" placeholder="Id cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_cliente">
+
+                  <div class="col-12 mt-3">
+                      <button class="btn btn-primary">Eliminar Cliente</button>
+                  </div>
+              </div>
+          </div>
+  </div>
+</form>

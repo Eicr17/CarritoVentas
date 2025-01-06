@@ -12,7 +12,8 @@ export class ComponenteProductoCreacionComponent {
 lstProducto!  : MdlProductoCrear[];
 public formProductos! : FormGroup
 
-constructor( private  srvProductoCreacion : SrvProductosService, private formbuilder : FormBuilder)
+constructor( private  srvProductoCreacion : SrvProductosService, 
+            private formbuilder : FormBuilder)
 {
 
 }
@@ -31,8 +32,10 @@ this.srvProductoCreacion.CrearProducto(
   this.formProductos.value
 ).subscribe(
   (response) => {
-    if(response.codigooperacion ==0)
-      alert("Producto creado exitosamente")
+    if(response.exitosa)
+      alert(response.mensaje)
+    else
+    ("Error: " + response.mensaje)
   },
   (fail : any) => {
     console.log(fail)
