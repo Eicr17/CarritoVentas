@@ -22,7 +22,7 @@ export class SrvVentasService {
    }
 
   CrearVentas( ventas_creacion:MdlVentasCreacion){
-        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Ventas/Crear`, ventas_creacion);
+        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Ventas/Crear`, ventas_creacion)
       }
 
   actualizacionVentas (venta_actualizacion : mdlVentaActualizar){
