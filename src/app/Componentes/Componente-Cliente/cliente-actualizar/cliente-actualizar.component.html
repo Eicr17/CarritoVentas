@@ -1,0 +1,42 @@
+<form [formGroup]="formClienteActualizar" (submit)="ActualizarClientes()">
+    <div class="container">
+      <div class="row">
+        <h1 class="text-center">Actualizacion De Clientes</h1>
+        <div class="col-12">
+            <label for="Id">Ingresar id</label>
+            <input type="text" class="form-control" placeholder="Id" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_cliente">
+          </div>
+        
+        <div class="col-12">
+          <label for="Nm">Ingresar nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="nombre">
+        </div>
+  
+        <div class="col-12 " >
+          <label for="Ap">Ingresar apellido</label>
+          <input type="text" class="form-control" placeholder="Apellido" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="apellido">
+        </div>
+  
+        <div class="col-12">
+          <label for="Dp">Ingresar dpi</label>
+          <input type="text" class="form-control" placeholder="Dpi" aria-label="Recipient's username" aria-describedby="basic-addon2"  formControlName="dpi">
+  
+        </div>
+  
+        <div class="row ">
+          <div class="col-12 mt-3">
+            <label for="Tl">Ingresar telefono</label>
+            <input type="text" class="form-control" placeholder="Telefono" aria-label="Recipient's username" aria-describedby="basic-addon2"  formControlName="telefono">
+  
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary">Enviar Actualizacion de Cliente</button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </form>

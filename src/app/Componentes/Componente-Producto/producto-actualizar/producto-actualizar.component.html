@@ -1,8 +1,13 @@
-<form [formGroup]="formProductos" (submit)="GrabarProducto()">
+<p>producto-actualizar works!</p>
+<form [formGroup]="formProductoAc" (submit)="ProductoActualizar()">
 
     <div class="container">
         <div class="row">
-            <h1 class="text-center">Creacion de Productos</h1>
+            <h1 class="text-center">Actualizacion de productos</h1>
+            <div class="col-12">
+                <label for="i">Ingrese id de producto</label>
+                    <input type="text" class="form-control" placeholder="Id" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_producto">
+            </div>
             <div class="col-12">
                 <label for="np">Ingrese nombre del producto</label>
                     <input type="text" class="form-control" placeholder="Nombre" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="nombre_producto">
@@ -26,7 +31,7 @@
 
         <div class="row">
             <div class="col-12 mt-3">
-                <button class="btn btn-primary">Enviar Producto</button>
+                <button class="btn btn-primary">Enviar Actualizacion de Producto</button>
             </div>
         </div>
     </div>

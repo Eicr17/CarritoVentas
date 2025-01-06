@@ -4,6 +4,7 @@ import { MdlProducto } from '../modelos/mdl-Producto.model';
 import { IServiceResponses } from '../modelos/Api-Response.model';
 import { environment } from 'src/environments/environment';
 import { MdlProductoCrear } from '../modelos/mdl-producto-creacion.model';
+import { mdlProductoActualizar } from '../modelos/mdl-producto-actualizar';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,15 @@ export class SrvProductosService {
   }
 
   CrearProducto( producto_creacion:MdlProductoCrear){
-        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Producto/Crear`, producto_creacion)
+        return this.httpClient.post<IServiceResponses> (`${environment.api_carrito}/Producto/Crear`, producto_creacion);
       }
+
+  actualizarProducto( producto_actualizacion : mdlProductoActualizar){
+        return this.httpClient.put<IServiceResponses> (`${environment.api_carrito}/Producto/Actualizar`, producto_actualizacion);
+  }
+  eliminarProducto( producto_eliminacion : number){
+        return this.httpClient.put<IServiceResponses> (`${environment.api_carrito}/Producto/Eliminar/${producto_eliminacion}`, producto_eliminacion);
+  }
   }
 
 

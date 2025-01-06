@@ -1,4 +1,3 @@
-<p>componente-venta-creacion works!</p>
 <form [formGroup]="formVenta" (submit)="GrabarVentas()">
     <div class="container">
         <h1 class="text-center">Creacion De Ventas</h1>
@@ -14,6 +13,16 @@
                 <input type="text" class="form-control" placeholder="Cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_cliente">
             </div>
 
+            <div class="col-12">
+                <label for="ip">Ingresar Id del producto</label>
+                    <input type="text" class="form-control" placeholder="Id producto" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_producto">
+
+            </div>
+            <div class="col-12">
+                <label for="ic">Ingresar Id del cliente</label>
+                    <input type="text" class="form-control" placeholder="Id cliente" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="id_cliente">
+
+            </div>
             <div class="col-12">
                 <label for="es">Ingresar establecimiento</label>
                     <input type="text" class="form-control" placeholder="Establecimiento" aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="establecimiento">

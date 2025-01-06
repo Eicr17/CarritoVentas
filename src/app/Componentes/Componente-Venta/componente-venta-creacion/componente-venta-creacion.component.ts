@@ -33,8 +33,10 @@ GrabarVentas(){
     this.formVenta.value
   ).subscribe(
     (response) => {
-      if (response.codigooperacion == 0)
-        alert("Venta creada exitosamente")
+      if (response.exitosa)
+        alert(response.mensaje)
+      else
+        alert("Error: " + response.mensaje)
     },
     (fail : any) =>{
       console.log(fail)
